@@ -21,6 +21,11 @@ import cors from "cors"
     res.json({message : "Hello"})
  })
 
+// Root route to avoid "Cannot GET /" in browsers
+app.get('/', (req, res) => {
+   res.json({ message: 'Server is running. Use /api/message for the API.' })
+})
+
 
  const PORT = 3000
  app.listen(PORT, "0.0.0.0", ()=>{
